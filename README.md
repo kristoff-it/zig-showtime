@@ -10,7 +10,7 @@ Since it's not like we're going to meet face2face anytime soon, how about we org
 
 # Basic proposal
 
-We decide a time and date for the meetup to take place. We then join a Discord server (the one linked in in the wiki? assuming owners are ok with the idea) at that time and have a short initial time where people can interact however they want. After giving enough time for people to come (e.g. 5-10mins) we start with the main program, which should be 2 presentations?
+We decide a time and date for the meetup to take place. We then join a Discord server (the one linked in in the wiki? assuming owners are ok with the idea) at that time and have a short initial time where people can interact however they want. After giving enough time for people to come (e.g. 5-10mins) we start with the main program, which should be 2 presentations + breaks.
 
 - The main session (i.e. the presentations + intermediate breaks) should be no longer than a couple of hours.
 - Each presentation should be no longer than 40 mins.
