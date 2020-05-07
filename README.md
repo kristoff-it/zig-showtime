@@ -7,20 +7,28 @@ Since it's not like we're going to meet face2face anytime soon, how about we org
 2. Open an issue (or comment on an existing one) if you want to propose a different approach
 3. After a while (a couple of weeks?) let's set a date and try having the first virtual meetup!
 
-
 # Basic proposal
 
-We decide a time and date for the meetup to take place. We then join a Discord server (the one linked in in the wiki? assuming owners are ok with the idea) at that time and have a short initial time where people can interact however they want. After giving enough time for people to come (e.g. 5-10mins) we start with the main program, which should be 2 presentations + breaks.
+- The meetup has an explicit starting time and a fixed-length main part. After that people can leave whenever they want. Being an online event, the concept of "leaving" is also a bit fuzzy anyway.
+- The main part is dedicated to showcasing intresting stuff from the community with some social interaction on top.
+- The main part should not last longer than 2h total, which gives enough time for roughly two 40mins long presentations.
+- The social interaction should be both via text and (optionally) via voice.
 
-- The main session (i.e. the presentations + intermediate breaks) should be no longer than a couple of hours.
-- Each presentation should be no longer than 40 mins.
-- Between each presentation there should be a break (15 mins?)
-- Presentations should work as follows:
-  - We livestream the presentation (e.g. on Twitch), people use Twitch chat for comments (or Discord?)
-  - After the presentation we reserve some time (10mins?) for voice questions (still on Twitch)
-  - After voice questions we have a the 15 mins break where people can chat freely (not streamed on Twitch)
-  - Same again for the second presentation.
+## Program structure:
+- Wait for everyone to join for 5-10mins after the official starting time.
+- Start the first presentation, use Twitch to broadcast it
+  - Sessions should be either live or recorded (recording allows people to present even if they don't have a great connection). Live is preferred.
+- At the end of each session we up to 10 mins of time for voice questions that will be answered on stream, followed by a 10 min break.
+- After the main content has been presented the meetup officially ends, but people are free to stick around as long as the want.
 
-Discord would allow to have people split in small voice rooms during the main session time (if they want to voice chat in small groups during the presentation) and have everybody be in the same room during breaks, or have people avoid voice and just participate through text.
+## Misc logistics
+- Discord for voice chatting & coordinating with speakers.
+  - One "Main" voice channel, A few secondary ones without user caps.
+- Speakers share their screen with the presenter who orchestrates the twitch stream.
+  - Using discord to share the session with everybody has a user limit and I think making the presented part more public is neat.
+
+## Nice to have
+- Custom Zig intro/outro/whatever short videos/animations?
+
 
 Please open an issue if you want to suggest a change or better define any detail.
