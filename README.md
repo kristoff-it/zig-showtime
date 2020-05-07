@@ -28,7 +28,7 @@ Since it's not like we're going to meet face2face anytime soon, how about we org
   - Using discord to share the session with everybody has a user limit and I think making the presented part more public is neat. Also recording for YT is probably a good move.
 
 ## Nice to have
-- Custom Zig intro/outro/whatever short videos/animations?
+- Custom Zig intro/outro/whatever short videos/animations? (infinite meme-able potential)
 
 
 Please open an issue if you want to suggest a change or better define any detail.
