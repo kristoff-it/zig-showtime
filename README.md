@@ -25,7 +25,7 @@ Since it's not like we're going to meet face2face anytime soon, how about we org
 - Discord for voice chatting & coordinating with speakers.
   - One "Main" voice channel, A few secondary ones without user caps.
 - Speakers share their screen with the presenter who orchestrates the twitch stream.
-  - Using discord to share the session with everybody has a user limit and I think making the presented part more public is neat.
+  - Using discord to share the session with everybody has a user limit and I think making the presented part more public is neat. Also recording for YT is probably a good move.
 
 ## Nice to have
 - Custom Zig intro/outro/whatever short videos/animations?
