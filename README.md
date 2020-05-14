@@ -2,33 +2,19 @@
 
 Since it's not like we're going to meet face2face anytime soon, how about we organize an online event for people to showcase what they are working on?
 
-# How to proceed
-1. Read the basic proposal I wrote in this README
-2. Open an issue (or comment on an existing one) if you want to propose a different approach
-3. After a while (a couple of weeks?) let's set a date and try having the first virtual meetup!
+## What's the event format?
+If you followed some of the previous discussions on the topic of organizing an online Zig meetup, you should know this is still a work in progress. After discussing some ideas on stream and thinking more about it, I'm opting for a very simple formula to start with:
 
-# Basic proposal
+0. Instead of thinking of it as a "meetup", let's think of it as a live streamed show, max 2h long.
+1. I host the show on my Twitch stream, introduce speakers who do their session, followed by a quick live Q&A at the end, by reading questions from different sources (more on that later).
+2. We do 2-3 sessions per event, with a short break in the middle.
 
-- The meetup has an explicit starting time and a fixed-length main part. After that people can leave whenever they want. Being an online event, the concept of "leaving" is also a bit fuzzy anyway.
-- The main part is dedicated to showcasing intresting stuff from the community with some social interaction on top.
-- The main part should not last longer than 2h total, which gives enough time for roughly two 40mins long presentations.
-- The social interaction should be both via text and (optionally) via voice.
+To accommodate speakers that might not be able to do the session live (e.g. because of unstable connectivity), we leave the option of pre-recording the session (which will be played on stream) and just have the live Q&A afterwards, although a fully live event is the preferred option.
 
-## Program structure:
-- Wait for everyone to join for 5-10mins after the official starting time.
-- Start the first presentation, use Twitch to broadcast it
-  - Sessions should be either live or recorded (recording allows people to present even if they don't have a great connection). Live is preferred.
-- At the end of each session we up to 10 mins of time for voice questions that will be answered on stream, followed by a 10 min break.
-- After the main content has been presented the meetup officially ends, but people are free to stick around as long as the want.
+Where do the questions come from? Here's the idea: we make this a BYOC event!
+By BYOC (bring your own community) I mean that viewers can interact not only through Twitch chat, but also through the main communities mentioned in https://github.com/ziglang/zig/wiki/Community. This way everyone will be able to stay in the groups they are already part of, and I'll come gather questions right where they are comfortable staying. 
 
-## Misc logistics
-- Discord for voice chatting & coordinating with speakers.
-  - One "Main" voice channel, A few secondary ones without user caps.
-- Speakers share their screen with the presenter who orchestrates the twitch stream.
-  - Using discord to share the session with everybody has a user limit and I think making the presented part more public is neat. Also recording for YT is probably a good move.
+In practical terms, for this first event, I'll be present in both the Zig Discord and the #zig IRC channel on Freenode, so viewers will also be able to ask questions there, on top of Twitch. As for any other social interaction, well that's up to the viewers whether they want to be in IRC, Discord, both or neither.
 
-## Nice to have
-- Custom Zig intro/outro/whatever short videos/animations? (infinite meme-able potential)
+I believe this is a reasonable starting point that also is aligned with Zig's idea of a decentralized community, as outlined in the wiki page linked above. In the future it might be worth exploring new ways of interacting.
 
-
-Please open an issue if you want to suggest a change or better define any detail.
