@@ -18,3 +18,5 @@ In practical terms, for this first event, I'll be present in both the Zig Discor
 
 I believe this is a reasonable starting point that also is aligned with Zig's idea of a decentralized community, as outlined in the wiki page linked above. In the future it might be worth exploring new ways of interacting.
 
+## Call for Speakers
+https://forms.gle/umLuHc8y2coqjaqAA
