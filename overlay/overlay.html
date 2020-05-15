@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+   <style type="text/css">
+      html, body {margin: 0; padding: 0;}
+      body {
+         background-color: #131315;
+         color: white;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         width: 1960px;
+         height: 1080px;
+      }
+
+      .ml11 {
+        font-weight: 700;
+        font-size: 3em;
+      }
+
+      .ml11 .text-wrapper {
+        position: relative;
+        display: inline-block;
+        padding-top: 0.1em;
+        padding-right: 0.05em;
+        padding-bottom: 0.15em;
+      }
+
+      .ml11 .line {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: #fff;
+        transform-origin: 0 50%;
+      }
+
+      .ml11 .line1 { 
+        top: 0; 
+        left: 0;
+      }
+
+      .ml11 .letter {
+        display: inline-block;
+        line-height: 1em;
+      }
+
+
+      #suspend {
+        opacity: 0;
+        display: inline-block;
+        line-height: 1em;
+      }
+      #l_paren, #r_paren {
+         opacity: 0;
+         display: inline-block;
+         line-height: 1em;
+      }
+
+      /* COLOR SET VIM */
+      #suspend {
+         color: #FFFF54;
+      }
+      .const {
+         color: #79FF9F;
+      }
+      .eq {
+         color: #FFFF54;
+      }
+      .string {
+         color: #FB56FE;
+      }
+      .identifier {
+         color: #BBBBBB;
+      }
+
+   </style>
+</head>
+<body>
+   <div>
+         <h1 class="ml11">
+           <span class="text-wrapper">
+             <span class="line line1"></span>
+             
+            <code>
+               <span id="suspend">suspend</span> <span id="l_paren">{</span>
+               <span class="letters">
+                  <br>
+                  <span class="space">  </span> 
+                  <span class="const">const</span> 
+                  <span class="var">now</span> 
+                  <span class="eq">=</span> 
+                  <span class="identifier">Talk</span>
+                  <span class="punctuation">{</span> 
+                  <br>
+
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="punctuation">.</span><span class="identifier">title</span> 
+                  <span class="eq">=</span> 
+                  <span class="string">"Introduction to Zig"</span><span class="punctuation">,</span> 
+                  <br>
+                   
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="punctuation">.</span><span class="identifier">author</span> 
+                  <span class="eq">=</span> 
+                  <span class="string">"Loris Cro"</span><span class="punctuation">,</span> 
+                  <br>
+
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="punctuation">.</span><span class="identifier">abstract</span> 
+                  <span class="eq">=</span> 
+                  <br>
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="mlcomment">\\</span>
+                  <span class="string">Lorem ipsum dolor sit amet lorem ipsum</span> 
+                  <br>
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="mlcomment">\\</span>
+                  <span class="string">Lorem ipsum dolor sit amet lorem ipsum</span> 
+                  <br>
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="mlcomment">\\</span>
+                  <span class="string">Lorem ipsum dolor sit amet lorem ipsum</span> 
+                  <br>
+                  <span class="space">  </span> 
+                  <span class="punctuation">};</span> 
+                  
+                  <br>
+                  <br>
+                  <span class="space">  </span> 
+                  <span class="const">const</span> 
+                  <span class="var">next</span> 
+                  <span class="eq">=</span> 
+                  <span class="identifier">Talk</span>
+                  <span class="punctuation">{</span> 
+                  <br>
+
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="punctuation">.</span><span class="identifier">title</span> 
+                  <span class="eq">=</span> 
+                  <span class="string">"Second Talk"</span><span class="punctuation">,</span> 
+                  <br>
+                   
+                  <span class="space">  </span> 
+                  <span class="space">  </span> 
+                  <span class="punctuation">.</span><span class="identifier">author</span> 
+                  <span class="eq">=</span> 
+                  <span class="string">"Banana Joe"</span><span class="punctuation">,</span>
+                  <br>
+                  <span class="space">  </span> 
+                  <span class="punctuation">};</span> 
+
+                  <br>
+               </span>
+               <span id="r_paren">}</span>
+            </code>
+         </h1>
+   </div>
+
+   <script type="text/javascript">
+      // Wrap every letter in a span
+      var textWrapper = document.querySelector('.ml11 .letters');
+      for (var i = 0; i < textWrapper.children.length; i++) {
+         textWrapper.children[i].innerHTML = textWrapper.children[i].textContent.replace(/([ ])/g, "&nbsp;");
+         textWrapper.children[i].innerHTML = textWrapper.children[i].textContent.replace(/(.)/g, "<span class='letter'>$&</span>");
+      }
+
+      anime.timeline({loop: false})
+        .add({
+         targets: '#suspend',
+         scale: [14, 1],
+         opacity: [0, 1],
+         easing: "easeInElastic(1, 10)",
+         duration: 800,
+         delay: (el, i) => 800 * i
+        }).add({
+         targets: '#l_paren',
+          easing: "easeOutExpo",
+         opacity: [0, 1],
+         translateX: [500, 0],
+         duration: 800,
+        }).add({
+         targets: '#r_paren',
+          easing: "easeOutExpo",
+         opacity: [0, 1],
+         translateX: [-500, 0],
+         duration: 800,
+        }, '-=800').add({
+          targets: '.ml11 .letter',
+          opacity: [0,1],
+          easing: "easeOutExpo",
+          duration: 600,
+          delay: (el, i) => 34 * (i+1)
+        }, '-=700');
+   </script>
+</body>
+</html>
+<!-- 
+.add({
+          targets: '.ml11 .line',
+          scaleY: [0,1],
+          opacity: [0.5,1],
+          easing: "easeOutExpo",
+          duration: 700
+        }).add({
+          targets: '.ml11 .line',
+          translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+          easing: "easeOutExpo",
+          duration: 700,
+          delay: 100
+        }).add({
+         targets: ".line",
+         opacity: [1, 0],
+         duration: 700,
+        }) -->
