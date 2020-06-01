@@ -5,6 +5,13 @@ Since it's not like we're going to meet face2face anytime soon, how about we org
 ## Call for Speakers
 https://forms.gle/umLuHc8y2coqjaqAA
 
+## Call for Art
+If you watched the first episode of Zig SHOWTIME you probably remember the opening sequence.
+If you know how to write short animations / demos and want to contribute to the show, I'm looking for 5 second long animations to replace the blinking "start" part of my intro, which you can [watch here](https://youtu.be/Unq712gqu2U?t=126).
+
+https://forms.gle/koFUPdBJAPNj1wEu8
+
+
 ## What's the event format?
 If you followed some of the previous discussions on the topic of organizing an online Zig meetup, you should know this is still a work in progress. After discussing some ideas on stream and thinking more about it, I'm opting for a very simple formula to start with:
 
