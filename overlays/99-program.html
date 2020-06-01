@@ -3,8 +3,12 @@
 <head>
    <title></title>
    <!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+   <script src="assets/anime.min.js"></script> 
    <style type="text/css">
+      @font-face {
+        font-family: 'Press Start 2P';
+        src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+      }  
       html, body {margin: 0; padding: 0;}
       body {
          background-color: #131315;
@@ -13,13 +17,17 @@
          flex-direction: row;
          justify-content: center;
          align-items: center;
-         width: 1960px;
+         width: 1920px;
          height: 1080px;
+      }
+
+      code {
+         font-family: 'Press Start 2P', cursive;
       }
 
       .ml11 {
         font-weight: 700;
-        font-size: 3em;
+        font-size: 2em;
       }
 
       .ml11 .text-wrapper {
@@ -76,8 +84,11 @@
          color: #FB56FE;
       }
       .identifier {
-         color: #BBBBBB;
+        color: #BBBBBB;
       }
+
+
+
 
    </style>
 </head>
@@ -88,7 +99,7 @@
              <span class="line line1"></span>
              
             <code>
-               <span id="suspend">suspend</span> <span id="l_paren">{</span>
+               <span id="suspend">showtime</span> <span id="l_paren">{</span>
                <span class="letters">
                   <br>
                   <span class="space">  </span> 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+    @font-face {
+      font-family: 'Press Start 2P';
+      src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+    }  
+      html, body {margin: 0; padding: 0;}
+      body {
+         font-family: 'Press Start 2P', cursive;
+         color: #FFFF54;
+         background-color: white;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+      }
+      #zig {
+        width: 340px;
+        transform: translateY(-20px);
+        filter: drop-shadow(-1px -1px 2px #131315) 
+                drop-shadow(1px -1px 2px #131315)
+                drop-shadow(-1px 1px 2px #131315)
+                drop-shadow(1px 1px 2px #131315);
+      }
+
+      #showtime{
+        transform: scale(3);
+        font-size: 1em;
+         /*background-color: #131315;*/
+        text-shadow:
+          -1px -1px 2px #131315,  
+          1px -1px 2px #131315,
+          -1px 1px 2px #131315,
+          1px 1px 2px #131315;
+      }
+
+      #logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0.4) translateX(2040px) translateY(1100px);
+      }
+
+      .box {
+        position: absolute;
+      }
+
+      #box-left{
+        left: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: #131315;
+      }
+
+      #box-right{
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: #131315;
+      }
+
+      #box-top{
+        top: 0;
+        width: 100vw;
+        height: 2vh;
+        background-color: #131315;
+      }
+
+      #box-bottom{
+        bottom: 0;
+        width: 100vw;
+        height: 2vh;
+        background-color: #131315;
+      }
+   </style>
+</head>
+<body>
+  <div id="box-top" class="box"></div>
+  <div id="box-left" class="box"></div>
+  <div id="box-right" class="box"></div>
+  <div id="box-bottom" class="box"></div>
+  <div id="logo">
+    <img id="zig" src="assets/zig.svg">
+      <h1 id="showtime">
+        SHOWTIME
+      </h1>
+
+  </div>
+  <script type="text/javascript">
+   window.animation = anime.timeline({autoplay: false})
+   .add({
+    delay: 1500,
+    targets: '#box-left,#box-right',
+    width: 56,
+    duration: 800,
+    easing: 'easeOutExpo',
+   }).add({
+    targets: '#box-left',
+    translateY: -416,
+    duration: 400,
+    easing: 'easeOutExpo',
+   }).add({
+    targets: '#box-bottom',
+    translateX: 696,
+    duration: 400,
+    easing: 'easeOutExpo',
+   }, '-=400');
+
+   if (window.obsstudio) {
+    window.addEventListener('obsSourceActiveChanged', function(event) {
+      console.log(event);
+      if (event.detail.active) {
+        window.animation.play();
+      } else {
+        window.animation.pause();
+        window.animation.seek(0);
+      }
+    });
+   } else {
+    window.animation.play();
+   }
+  </script>
+</body>
+</html>

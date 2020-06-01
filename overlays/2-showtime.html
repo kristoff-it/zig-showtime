@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+    @font-face {
+      font-family: 'Press Start 2P';
+      src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+    }  
+      html, body {margin: 0; padding: 0;}
+      body {
+         font-family: 'Press Start 2P', cursive;
+         background-color: #131315;
+         color: white;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+      }
+
+      .ml15 {
+        font-weight: 800;
+        font-size: 1em;
+        text-transform: uppercase;
+        /*letter-spacing: 0.5em;*/
+      }
+
+      .word {
+        display: inline-block;
+        line-height: 1em;
+      }
+
+      /* COLOR SET VIM */
+      #suspend {
+         color: #FFFF54;
+      }
+      .const {
+         color: #79FF9F;
+      }
+      .eq {
+         color: #FFFF54;
+      }
+      .string {
+         color: #FB56FE;
+      }
+      .identifier {
+         color: #BBBBBB;
+      }
+
+      .last {
+        position: relative;
+      }
+
+
+
+      #time, #runtime, #nighttime {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+      }
+
+       #comp, #show {
+        position: absolute;
+        left: : 0;
+        opacity: 0;
+      }
+
+      #show {
+        color: #FFFF54;
+      }
+
+      .spacer {
+        opacity: 0;
+      }
+
+      #zig {
+        width: 340px;
+        opacity: 0;
+      }
+
+      #pog {
+        opacity: 0;
+        position: absolute;
+        left: 708px;
+        bottom: 200px;
+        font-size: 2em;
+      }
+   </style>
+</head>
+<body>
+  <img id="zig" src="assets/zig.svg">
+   <div>
+    <h1 class="ml15">
+      <span class="word">EXECUTE</span>
+      <span class="word">ZIG</span>
+      <span class="word">AT</span>
+      <span class="last">
+        <span id="daytime" class="word">NIGHTTIME</span>
+        <span id="nighttime">DAYTIME</span>
+        <span id="runtime">RUNTIME</span>
+        <span id="time"><span id="comp">COMP</span><span id="show">SHOW</span><span class="spacer">SHOW</span>TIME</span>
+      </span>
+    </h1>
+   </div>
+   <div id="pog">(you may pog now)</div>
+   <script type="text/javascript">
+    anime.speed = 1;
+      anime.timeline({loop: false})
+        .add({
+          targets: '.ml15 .word',
+          scale: [14,1],
+          opacity: [0,1],
+          easing: "easeInElastic(1, 10)",
+          duration: 800,
+          delay: (el, i) => 800 * i
+        }).add({
+          targets: '#daytime',
+          translateY: [0, 30],
+          opacity: [1, 0],
+          easing: "easeOutCirc",
+          delay: 500,
+          duration: 300,
+        }).add({
+          targets: '#runtime , #nighttime',
+          keyframes: [
+            {
+              translateY: -30,
+              opacity: 0,
+              easing: "easeOutCirc",
+              duration: 0,
+            },
+            {
+              translateY: 0,
+              opacity: 1,
+              easing: "easeOutCirc",
+              duration: 150,
+            },
+            {
+              translateY: 30,
+              opacity: 0,
+              easing: "easeOutCirc",
+              delay: 1000,
+              duration: 150,
+            }
+          ],
+          delay: (el, i) => 1300 * i,
+        }, '-=150').add({
+          targets: '#time',
+          translateY: [-30, 0],
+          opacity: [0, 1],
+          easing: "easeOutCirc",
+          duration: 300,
+          endDelay: 1000,
+        }, '-=150').add({
+          targets: '#comp',
+          translateY: [0, 30],
+          opacity: [1, 0],
+          easing: "easeOutCirc",
+          duration: 300,
+        }).add({
+          targets: '#show',
+          translateY: [-30, 0],
+          opacity: [0, 1],
+          easing: "easeOutCirc",
+          duration: 300,
+          endDelay: 500,
+        }, '-=300').add({
+          targets: '.word',
+          opacity: 0,
+          // translateX: [0, -300],
+          easing: "easeOutElastic(1, 10)",
+          duration: 250,
+        }).add({
+          targets: '#time',
+          translateX: -112,
+          scale: 3,
+          color: '#FFFF54',
+          duration: 250,
+          easing: "easeOutElastic(1, 10)",
+        }, '-=250').add({
+          targets: '#zig',
+          translateY: [-90, -20],
+          opacity: {value: [0, 1], easing: 'easeOutExpo'},
+          easing: "easeInElastic(1, 10)",
+          duration: 250,
+          endDelay: 2000,
+        }, '-=400').add({
+          targets: '#pog',
+          keyframes:[
+            {opacity: 1, duration: 100, endDelay: 2000},
+            {opacity: 0, duration: 300},
+          ],
+          easing: "easeOutCirc",
+        });
+   </script>
+</body>
+</html>
+<!-- 
+.add({
+          targets: '.ml11 .line',
+          scaleY: [0,1],
+          opacity: [0.5,1],
+          easing: "easeOutExpo",
+          duration: 700
+        }).add({
+          targets: '.ml11 .line',
+          translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+          easing: "easeOutExpo",
+          duration: 700,
+          delay: 100
+        }).add({
+         targets: ".line",
+         opacity: [1, 0],
+         duration: 700,
+        }) -->

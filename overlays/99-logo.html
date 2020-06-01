@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+    @font-face {
+      font-family: 'Press Start 2P';
+      src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+    }  
+      html, body {margin: 0; padding: 0;}
+      body {
+         font-family: 'Press Start 2P', cursive;
+         color: #FFFF54;
+         background-color: #131315;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+      }
+      #zig {
+        width: 340px;
+        transform: translateY(-20px);
+        filter: drop-shadow(-1px -1px 2px #131315) 
+                drop-shadow(1px -1px 2px #131315)
+                drop-shadow(-1px 1px 2px #131315)
+                drop-shadow(1px 1px 2px #131315);
+      }
+
+      #showtime{
+        transform: scale(3);
+        font-size: 1em;
+        text-shadow:
+          -1px -1px 2px #131315,  
+          1px -1px 2px #131315,
+          -1px 1px 2px #131315,
+          1px 1px 2px #131315;
+      }
+
+      #logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+   </style>
+</head>
+<body>
+  <div id="logo">
+    <img id="zig" src="assets/zig.svg">
+      <h1 id="showtime">
+        SHOWTIME
+      </h1>
+  </div>
+</body>
+</html>

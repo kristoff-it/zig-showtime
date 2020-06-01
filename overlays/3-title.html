@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+    @font-face {
+      font-family: 'Press Start 2P';
+      src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+    }  
+      html, body {margin: 0; padding: 0;}
+      body {
+         font-family: 'Press Start 2P', cursive;
+         color: #FFFF54;
+         background-color: #131315;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+      }
+      #zig {
+        width: 340px;
+        transform: translateY(-20px);
+        filter: drop-shadow(-1px -1px 2px #131315) 
+                drop-shadow(1px -1px 2px #131315)
+                drop-shadow(-1px 1px 2px #131315)
+                drop-shadow(1px 1px 2px #131315);
+      }
+
+      #showtime{
+        transform: scale(3);
+        font-size: 1em;
+         /*background-color: #131315;*/
+        text-shadow:
+          -1px -1px 2px #131315,  
+          1px -1px 2px #131315,
+          -1px 1px 2px #131315,
+          1px 1px 2px #131315;
+      }
+
+      #logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #title {
+        letter-spacing: 1px;
+        font-size: 3em;
+        padding-left: 30px;
+        padding-right: 30px;  
+        line-height: 1.2em;    
+        opacity: 0;
+      }
+
+      #by {
+        color: #f39319;
+        display: inline-block;
+        opacity: 0;
+      }
+
+      .word {
+        line-height: 3em;
+        text-transform: uppercase;
+        color: white;
+        display: inline-block;
+        opacity: 0;
+      }
+
+      #top{
+        text-align: center;
+        position: absolute;
+        top: 400px;
+      }
+   </style>
+</head>
+<body>
+  <div id="top">
+    <h1 id="title">
+      Title
+    </h1>
+    <h1>
+      <span id="by" >by</span>
+      <span class="word">Name</span>
+      <span class="word">Surname</span>
+    </h1>
+  </div>
+  <div id="logo">
+    <img id="zig" src="assets/zig.svg">
+      <h1 id="showtime">
+        SHOWTIME
+      </h1>
+  </div>
+  <script type="text/javascript">
+   window.animation = anime.timeline({autoplay: false})
+   .add({
+    targets: '#logo',
+    delay: 1000,
+    scale: {value: 0.4, easing: 'easeOutExpo'},
+    duration: 2200,
+    translateX: 2040,
+    translateY: 1100,
+    easing: 'easeInExpo',
+   }).add({
+    targets: '#title',
+    translateY: [-30, 0],
+    opacity: 1,
+    duration: 800,
+    easing: 'easeOutExpo',
+   }).add({
+    targets: '#by,.word',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeInElastic(1, 10)",
+    duration: 800,
+    delay: (el, i) => 800 * i
+   });
+
+   if (window.obsstudio) {
+    window.addEventListener('obsSourceActiveChanged', function(event) {
+      console.log(event);
+      if (event.detail.active) {
+        window.animation.play();
+      } else {
+        window.animation.pause();
+        window.animation.seek(0);
+      }
+    });
+   } else {
+    window.animation.play();
+   }
+  </script>
+</body>
+</html>

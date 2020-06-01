@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+      @font-face {
+        font-family: 'Press Start 2P';
+        src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+      }  
+
+      html, body {margin: 0; padding: 0;}
+      body {
+         background-color: #131315;
+         color: white;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+      }
+      body, code {
+        /*font-family: 'Inter', sans-serif;*/
+        font-family: 'Press Start 2P', cursive;
+      }
+
+      .ml3 {
+        /*font-weight: 900;*/
+        font-size: 1.2em;
+      }
+
+      .ml4 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        position: relative;
+        font-weight: 900;
+        font-size: 4.5em;
+        width: 100%;
+      }
+      .ml4 .letters {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 0.3em;
+        opacity: 0; 
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
+      }
+
+      #ready {
+        font-size: 2em;
+        font-family: 'Press Start 2P', cursive;
+        opacity: 0;
+      }
+   </style>
+</head>
+<body>
+  <div>
+<!--     <code class="ml3">
+      WELCOME&nbsp; TO&nbsp; THE&nbsp; SHOW&nbsp; WHERE&nbsp;  
+      MEMBERS&nbsp; OF&nbsp; THE&nbsp; ZIG&nbsp; COMMUNITY&nbsp;
+      SHARE&nbsp; AWESOME
+    </code> -->
+    <code class="ml3">
+      WELCOME TO THE SHOW WHERE  
+      MEMBERS OF THE ZIG COMMUNITY
+      SHARE AWESOME
+    </code>
+  </div>
+    <h1 class="ml4">
+      <span class="letters"> 
+        CODE
+      </span>
+      <span class="letters">
+        PROJECTS
+      </span>
+      <span class="letters">
+        IDEAS
+      </span>
+      <span class="letters">
+        MEMES
+      </span>
+      <span class="letters">
+        AND MORE&#33;
+      </span>
+    </h1>
+    <div id="ready">
+      START
+    </div>
+   <script type="text/javascript">
+    const zip = (arr1, arr2) => arr1.flatMap((k, i) => [k, arr2[i]]);
+    const frames = zip(
+      Array(3).fill({
+        easing: "linear",
+        opacity: 1,
+        duration: 500,
+      }),
+      Array(3).fill({
+        easing: "linear",
+        opacity: 0,
+        duration: 500,
+    }));
+
+    // Wrap every letter in a span
+    var ready = document.querySelector('#ready');
+    var textWrapper = document.querySelector('.ml3');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/./g, "<span class='letter'>$&</span>");
+
+    anime.speed = 1;
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml3 .letter',
+        opacity: [0,1],
+        easing: "easeInOutQuad",
+        delay: (el, i) => 50 * (i+1)
+      }).add({
+        targets: '.letters',
+        keyframes: [
+          {
+            opacity: [0,1],
+            scale: [0.2, 1],
+            duration: 600,
+          }, 
+          {
+            opacity: 0,
+            scale: 3,
+            duration: 500,
+            easing: "easeInExpo",
+            delay: 300
+          }
+        ],
+        delay: (el, i) => 1400 * i,
+      }).add({
+        targets: '.ml3',
+        opacity: 0,
+        duration: 800,
+        easing: "easeOutExpo",
+        delay: 500,
+      }, '-=500').add({
+        targets: '#ready',
+        keyframes: frames.concat([{
+          easing: "linear",
+          opacity: 1,
+          duration: 250
+        },
+        {
+          opacity: 0,
+          scale: 3,
+          duration: 500,
+          easing: "easeInExpo",
+        }])
+      });
+   </script>
+</body>
+</html>

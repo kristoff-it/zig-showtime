@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+    @font-face {
+      font-family: 'Press Start 2P';
+      src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+    }  
+      html, body {margin: 0; padding: 0;}
+      body {
+         font-family: 'Press Start 2P', cursive;
+         color: #FFFF54;
+         background-color: #131315;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+         text-align: center;
+      }
+      #zig {
+        width: 340px;
+        transform: translateY(-20px);
+        filter: drop-shadow(-1px -1px 2px #131315) 
+                drop-shadow(1px -1px 2px #131315)
+                drop-shadow(-1px 1px 2px #131315)
+                drop-shadow(1px 1px 2px #131315);
+      }
+
+      #showtime{
+        transform: scale(3);
+        font-size: 1em;
+        text-shadow:
+          -1px -1px 2px #131315,  
+          1px -1px 2px #131315,
+          -1px 1px 2px #131315,
+          1px 1px 2px #131315;
+      }
+
+      #logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title {
+        color: white;
+        font-size: 2em;
+      }
+
+      #text {
+        position: absolute;
+        top: 500px;
+        font-size: 1.5em;
+        line-height: 2em;
+        opacity: 0;
+      }
+
+      .block {
+        margin-top: 40px;
+      }
+
+   </style>
+</head>
+<body>
+  <div id="logo">
+    <img id="zig" src="assets/zig.svg">
+      <h1 id="showtime">
+        SHOWTIME
+      </h1>
+  </div>
+  <div id="text">
+    <div class="block">
+      <div class="title">NEXT EPISODE</div>
+      <div>Sunday 7th of June</div>
+      <div>1am PT / 3am ET / 17.00 CET / 8pm SGT</div>
+    </div>
+    <div class="block">
+      <div class="title">FOLLOW @ZIGSHOWTIME ON TWITTER</div>
+      <div>to be notified when the next episode airs</div>
+    </div>
+    <div class="block">
+      <div class="title">FOLLOW THE TWITCH CHANNEL</div>
+      <div>to be notified when I go live</div>
+        <div>(I'm also <span style="color:white">@croloris</span> on Twitter)</div>
+    </div>
+  </div>
+  <script type="text/javascript">
+   window.animation = anime.timeline({autoplay: false})
+    .add({
+      targets: '#logo',
+      delay: 500,
+      translateY: -250,
+      easing: 'easeOutExpo',
+      duration: 600,
+    }).add({
+      targets: '#text',
+      opacity: 1,
+      easing: 'linear',
+      duration: 800,
+    });
+
+    if (window.obsstudio) {
+     window.addEventListener('obsSourceActiveChanged', function(event) {
+       console.log(event);
+       if (event.detail.active) {
+         window.animation.play();
+       } else {
+         window.animation.pause();
+         window.animation.seek(0);
+       }
+     });
+    } else {
+     window.animation.play();
+    }
+  </script>
+</body>
+</html>
