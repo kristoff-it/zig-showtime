@@ -2,6 +2,9 @@
 
 Since it's not like we're going to meet face2face anytime soon, how about we organize an online event for people to showcase what they are working on?
 
+## Call for Speakers
+https://forms.gle/umLuHc8y2coqjaqAA
+
 ## What's the event format?
 If you followed some of the previous discussions on the topic of organizing an online Zig meetup, you should know this is still a work in progress. After discussing some ideas on stream and thinking more about it, I'm opting for a very simple formula to start with:
 
@@ -18,5 +21,3 @@ In practical terms, for this first event, I'll be present in both the Zig Discor
 
 I believe this is a reasonable starting point that also is aligned with Zig's idea of a decentralized community, as outlined in the wiki page linked above. In the future it might be worth exploring new ways of interacting.
 
-## Call for Speakers
-https://forms.gle/umLuHc8y2coqjaqAA
