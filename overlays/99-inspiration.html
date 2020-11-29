@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+      @font-face {
+        font-family: 'Press Start 2P';
+        src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+      }  
+
+      html, body {margin: 0; padding: 0;}
+      body {
+         background-color: #131315;
+         color: white;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+      }
+      body, code {
+        /*font-family: 'Inter', sans-serif;*/
+        font-family: 'Press Start 2P', cursive;
+      }
+
+      .ml4 {
+        /*margin-top: 100px;*/
+        /*margin-bottom: 100px;*/
+        position: relative;
+        font-weight: 900;
+        font-size: 4.5em;
+        width: 100%;
+      }
+      .ml4 .letters {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 50px;
+        /*margin: auto;*/
+        /*top: 0.3em;*/
+        opacity: 0; 
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
+        /*letter-spacing: 1px;*/
+        line-height: 1.2em;
+        text-transform: uppercase;
+      }
+
+      #end {
+        /*font-weight: 900;*/
+        /*opacity: 0;*/
+        text-align: center;
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: -20px;
+      }
+
+      .ml3 {
+        display: inline-block;
+      }
+
+      #t1 {
+        font-size: 0.4em;
+        transform: translateY(-1px);
+        color:#FFFF54;
+      }
+
+      #t2 {
+        font-size: 1em;
+      }
+      #t3 {
+        color:#F7A41D;
+        display: inline-block;
+        font-size: 0.6em;
+        transform: translateY(-33px);
+        opacity: 0;
+      }
+
+      .zen {
+        font-size: 0.6em;
+        color: lightblue;
+      }
+   </style>
+</head>
+<body>
+  <h1 class="ml4">
+    <span style="opacity: 0;">
+      Some text that expands 
+      the size of the enclosing block.
+    </span>
+    <span class="letters"> 
+      When open-source development
+    </span>
+    <span class="letters">
+      Is struggling to <br> be sustainable
+    </span>
+    <span class="letters">
+      And profit dictates software design
+    </span>
+    <span class="letters">
+      Over empathy and inspiration
+    </span>
+    <span class="letters">
+      You can make <br> a difference
+    </span>
+    <span class="letters">
+      Not through <br> sacrifice
+    </span>
+    <span class="letters">
+      But through joyful collaboration
+    </span>
+    <span class="letters">
+      And by creating <br> something good
+    </span>
+    <span class="letters">
+      For the community <br> and yourself
+    </span>
+
+    <span class="letters zen"> 
+      * Communicate intent precisely *
+    </span>
+    <span class="letters zen"> 
+      * Edge cases matter *
+    </span>
+    <span class="letters zen"> 
+      * Favor reading code over writing code *
+    </span>
+    <span class="letters zen"> 
+      * Only one obvious way to do things *
+    </span>
+    <span class="letters zen"> 
+      * Runtime crashes are better than bugs *
+    </span>
+    <span class="letters zen"> 
+      * Compile errors <br> are better than <br> runtime crashes *
+    </span>
+    <span class="letters zen"> 
+      * Incremental improvements *
+    </span>
+    <span class="letters zen"> 
+      * Avoid local maximums *
+    </span>
+    <span class="letters zen"> 
+      * Reduce the amount one must remember *
+    </span>
+    <span class="letters zen"> 
+      * Minimize energy spent on coding style *
+    </span>
+    <span class="letters zen"> 
+      * Together we serve end users *
+    </span>
+
+    <span class="letters">
+      Fewer investors 
+    </span>
+    <span class="letters">
+      And less <br> artificial growth
+    </span>
+    <span class="letters">
+      More fun <br> and 
+    </span>
+    <span class="letters">
+      More spontaneous dedication
+    </span>
+    <span class="letters">
+      For a future where 
+    </span>
+    <span class="letters">
+      A nimble organization <br> Can support
+    </span>
+    <span class="letters" >
+      Sustainable progress <br> and 
+    </span>
+    <span class="letters" id="last">
+      A new generation <br> of students
+    </span>
+    
+    <div id="end">
+      <code id="t1" class="ml3">
+        WELCOME TO THE
+      </code>
+      <code id="t2" class="ml3">
+        ZIG 
+        SOFTWARE 
+        FOUNDATION
+      </code>
+      <code id="t3">
+        TOGETHER WE SERVE HUMANS
+      </code>
+    </div>
+  </h1>
+
+  <script type="text/javascript">
+    // Wrap every letter in a span
+    anime.speed = 1;
+
+    var t1 = document.querySelector('#t1');
+    t1.innerHTML = t1.textContent.replace(/./g, "<span class='letter'>$&</span>");
+    var t2 = document.querySelector('#t2');
+    t2.innerHTML = t2.textContent.replace(/./g, "<span class='letter'>$&</span>");
+
+    let animation = anime.timeline({loop: false, autoplay: false})
+      .add({
+        targets: '.letters',
+        keyframes: [
+          {
+            opacity: [0,1],
+            scale: [0.2, 1],
+            duration: 600,
+          }, 
+          {
+            opacity: 0,
+            scale: 3,
+            duration: 700,
+            easing: "easeOutExpo",
+            delay: (el, i) => el.id == "last" ? 3600 : 1600,
+          }
+        ],
+        delay: (el, i) => 2900 * i,
+      })
+    .add({
+      targets: '.ml3 .letter',
+      opacity: [0,1],
+      easing: "easeInOutQuad",
+      delay: (el, i) => 100 * (i+1)
+    })
+    .add({
+      targets: '#t3',
+      opacity: 1,
+      easing: "easeInOutQuad",
+      endDelay: 5000,
+    });
+
+
+
+  </script>
+</body>
+</html>

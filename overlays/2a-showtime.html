@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="http://livejs.com/live.js"></script>
+   <script src="assets/anime.min.js"></script> 
+   <style type="text/css">
+    @font-face {
+      font-family: 'Press Start 2P';
+      src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+    }  
+      html, body {margin: 0; padding: 0;}
+      body {
+         font-family: 'Press Start 2P', cursive;
+         background-color: #131315;
+         color: white;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         width: 1920px;
+         height: 1080px;
+      }
+
+      .ml15 {
+        font-weight: 800;
+        font-size: 3em;
+        text-transform: uppercase;
+        /*letter-spacing: 0.5em;*/
+        position:relative;
+      }
+
+      .word {
+        display: inline-block;
+        line-height: 1em;
+      }
+
+      /* COLOR SET VIM */
+      #suspend {
+         color: #FFFF54;
+      }
+      .const {
+         color: #79FF9F;
+      }
+      .eq {
+         color: #FFFF54;
+      }
+      .string {
+         color: #FB56FE;
+      }
+      .identifier {
+         color: #BBBBBB;
+      }
+
+      .last {
+        position: relative;
+      }
+
+       #comp, #show {
+        position: absolute;
+        left: : 0;
+        opacity: 0;
+      }
+
+      #show {
+        color: #FFFF54;
+      }
+
+      .spacer {
+        opacity: 0;
+      }
+
+      #zig {
+        transform: translateY(18px);
+        opacity: 1;
+        position: relative;
+        width:340px;
+        height:309.08px;
+      }
+
+      #pog {
+        opacity: 0;
+        position: absolute;
+        left: 708px;
+        bottom: 200px;
+        font-size: 2em;
+      }
+
+      #zig-left {
+        background-image: url("assets/zig-left.svg");
+        transform: translateX(95px);
+      }
+      #zig-center {
+        width: 340px;
+        opacity: 0;
+        display: inline-block;
+      }
+      #zig-right {
+        background-image: url("assets/zig-right.svg");
+        transform: translateX(-190px);
+      }
+      .zigimg {
+        width:340px;
+        height:309.08px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      #showtime, #comptime, #runtime {
+        position:absolute;
+        top:0;
+        left:0;
+        opacity: 0;
+      }
+   </style> 
+</head>
+<body>
+   <div id="zig">
+     <img id="zig-left"   class="zigimg" src="assets/zig-left.svg">
+     <svg id="zig-center" fill="#F7A41D" class="zigimg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 154 140">
+      <g>
+        <polygon points="56,22 62,36 37,44"/>
+        <polygon points="56,22 111,22 111,44 37,44 56,32" shape-rendering="crispEdges"/>
+        <polygon points="116,95 97,117 90,104"/>
+        <polygon points="116,95 100,104 97,117 42,117 42,95" shape-rendering="crispEdges"/>
+        <polygon points="150,0 52,117 3,140 101,22"/>
+      </g>
+     </svg>
+     <img id="zig-right"  class="zigimg" src="assets/zig-right.svg">
+   </div>
+    <h1 class="ml15">
+      <span id="runtime">&#8239;RUNTIME</span>
+      <span id="comptime">COMPTIME</span>
+      <span id="showtime">SHOWTIME</span>
+      <span id="spacer" style="opacity:0;">SHOWTIME</span>
+    </h1>
+   <script type="text/javascript">
+    anime.speed = 1;
+      anime.timeline({loop: true})
+      .add({
+        targets: '#runtime , #comptime',
+        keyframes: [
+          {
+            translateY: -30,
+            opacity: 0,
+            easing: "easeOutCirc",
+            duration: 0,
+          },
+          {
+            translateY: 0,
+            opacity: 1,
+            easing: "easeOutCirc",
+            duration: 150,
+          },
+          {
+            translateY: 30,
+            opacity: 0,
+            easing: "easeOutCirc",
+            delay: 1000,
+            duration: 150,
+          }
+        ],
+        delay: (el, i) => 1300 * i,
+      })
+      .add({
+        targets: '#showtime',
+        keyframes: [
+          {
+            translateY: -30,
+            opacity: 0,
+            easing: "easeOutCirc",
+            duration: 0,
+          },
+          {
+            translateY: 0,
+            opacity: 1,
+            easing: "easeOutCirc",
+            duration: 300,
+          },
+        ],
+      })
+      .add({
+        targets: "#zig",
+        delay: 500,
+        opacity: [0,1],
+        duration: 600,
+        easing: "easeOutCirc",
+      })
+      .add({
+        targets: '#zig-left',
+        keyframes: [
+          {translateX: 95, easing: "linear", duration: 0},
+          {translateX: -250, easing: "easeOutCirc", duration: 1000},
+          {translateX: 0, easing: "easeInElastic(1, 10)", duration: 500},
+        ],
+        easing: "easeOutElastic(1, .8)",
+        duration: 1500,
+        // delay: 1000,
+      })
+      .add({
+        targets: '#zig-right',
+        keyframes: [
+        {translateX: -95, easing: "linear", duration: 0},
+        {translateX: 250, easing: "easeOutCirc", duration: 1000},
+        {translateX: 0, easing: "easeInElastic(1, 10)", duration: 500},
+        ],
+        easing: "easeOutExpo",
+        duration: 1500
+      }, '-=1500')
+      .add({
+        targets: '#zig-center',
+        opacity: [0, 1],
+        // scale: [0.7, 1],
+        translateY: [-90, 0],
+        easing: "easeInElastic(1, 10)",
+        duration: 450,
+      }, '-=450')
+      .add({
+        targets: '#showtime',
+        color: '#FFFF54',
+        duration: 200,
+        endDelay: 2000
+      }, '-=50')
+
+   </script>
+</body>
+</html>
+<!-- 
+.add({
+          targets: '.ml11 .line',
+          scaleY: [0,1],
+          opacity: [0.5,1],
+          easing: "easeOutExpo",
+          duration: 700
+        }).add({
+          targets: '.ml11 .line',
+          translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+          easing: "easeOutExpo",
+          duration: 700,
+          delay: 100
+        }).add({
+         targets: ".line",
+         opacity: [1, 0],
+         duration: 700,
+        }) -->

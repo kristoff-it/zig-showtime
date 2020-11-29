@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="3387.0239"
+   inkscape:export-xdpi="3387.0239"
+   inkscape:export-filename="/Users/kristoff/Documents/zig-meetup/overlays/assets/zig-border.png"
+   inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
+   sodipodi:docname="zig-border.svg"
+   id="svg937"
+   version="1.1"
+   viewBox="0 0 154 140"
+   style="stroke:#131315;stroke-width:1">
+  <metadata
+     id="metadata943">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs941" />
+  <sodipodi:namedview
+     inkscape:current-layer="g933"
+     inkscape:window-maximized="0"
+     inkscape:window-y="665"
+     inkscape:window-x="1129"
+     inkscape:cy="63.555811"
+     inkscape:cx="77"
+     inkscape:zoom="6.2071429"
+     showgrid="false"
+     id="namedview939"
+     inkscape:window-height="1035"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     inkscape:document-rotation="0"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <g
+     style="display:none"
+     inkscape:label="Layer 1"
+     id="layer1"
+     inkscape:groupmode="layer">
+    <g
+       style="fill:#000000;fill-opacity:1;"
+       id="g935-2"
+       fill="#F7A41D"
+       transform="matrix(1.0261438,0,0,1.0285714,-1,-1)">
+      <g
+         style="fill:#000000;fill-opacity:1;"
+         id="g913-1">
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon907-3"
+           points="46,22 28,44 19,30 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon909-6"
+           shape-rendering="crispEdges"
+           points="0,22 46,22 33,33 28,44 22,44 22,95 31,95 20,100 12,117 0,117 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon911-5"
+           points="31,95 12,117 4,106 " />
+      </g>
+      <g
+         style="fill:#000000;fill-opacity:1;"
+         id="g925-7">
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon915-3"
+           points="56,22 62,36 37,44 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon917-6"
+           shape-rendering="crispEdges"
+           points="56,32 56,22 111,22 111,44 37,44 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon919-3"
+           points="116,95 97,117 90,104 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon921-2"
+           shape-rendering="crispEdges"
+           points="42,95 116,95 100,104 97,117 42,117 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon923-5"
+           points="52,117 3,140 101,22 150,0 " />
+      </g>
+      <g
+         style="fill:#000000;fill-opacity:1;"
+         id="g933-0">
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon927-3"
+           points="141,22 140,40 122,45 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon929-7"
+           shape-rendering="crispEdges"
+           points="141,22 153,22 153,117 106,117 120,105 125,95 131,95 131,45 122,45 132,36 " />
+        <polygon
+           style="fill:#000000;fill-opacity:1;"
+           id="polygon931-3"
+           points="125,95 130,110 106,117 " />
+      </g>
+    </g>
+  </g>
+  <g
+     style="display:inline"
+     inkscape:label="Layer 2"
+     id="layer2"
+     inkscape:groupmode="layer">
+    <g
+       fill="#F7A41D"
+       id="g935"
+       style="">
+      <g
+         id="g913"
+         style="" />
+      <g
+         id="g925"
+         style="" />
+      <g
+         id="g933"
+         style="">
+        <path
+           d="M 150 0 L 101 22 L 56 22 L 37 44 L 82.728516 44 L 3 140 L 52 117 L 97 117 L 116 95 L 70.427734 95 L 150 0 z M 0 22 L 0 117 L 12 117 L 31 95 L 22 95 L 22 44 L 28 44 L 46 22 L 0 22 z M 141 22 L 122 45 L 131 45 L 131 95 L 125 95 L 106 117 L 153 117 L 153 22 L 141 22 z "
+           style=""
+           id="polygon931" />
+      </g>
+    </g>
+  </g>
+</svg>

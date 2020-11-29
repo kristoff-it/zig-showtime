@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="assets/progress.min.js"></script> 
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <style type="text/css">
+    	@font-face {
+    	  font-family: 'Press Start 2P';
+    	  src: url('assets/PressStart2P-Regular.ttf') format('truetype');
+    	}  
+
+    	html, body {margin: 0; padding: 0; background-color: #131315;}
+    	body, code {
+    	  /*font-family: 'Inter', sans-serif;*/
+    	  font-family: 'Press Start 2P', cursive;
+    	}
+
+    	#barBox {
+    		display: flex;
+    		flex-direction: column;
+    	}
+
+    	#goalsBox {
+    		display: flex;
+    		flex-direction: row;
+    		width: 100%;
+    	}
+
+    	#bar {
+    		border: 5px solid #131315;
+    		border-radius: 5px;
+    		height: 17px;
+/*    		filter: drop-shadow(-1px -1px 2px #131315) 
+    		        drop-shadow(1px -1px 2px #131315)
+    		        drop-shadow(-1px 1px 2px #131315)
+    		        drop-shadow(1px 1px 2px #131315);*/
+    	}
+
+    	.money {
+    		color: #FFFF54;
+    		width: 100%;
+    		text-align: center;
+    	}
+
+    	img {
+    	  border-radius: 50%;
+    	  width: 80px;
+    	  margin-top: 10px;
+    	}
+    </style>
+</head>
+<body>
+	<div id="barBox" style="margin-left: 5%; margin-right: 5%; margin-top: 2%;">
+		<div style="border: 3px solid #FFFF54; border-radius: 5px;">
+			<div id="bar"></div>
+		</div>
+		<div id="goalsBox" style="padding: 5px; border: '1px solid black';">
+			<div id="zero"    style="width:12%;text-align: center;"></div>
+			<div id="cabbage1" style="width:1%;text-align: center;"></div>
+			<div              style="width:12%;text-align: center;"></div>
+			<div id="andrew"  style="width:1%;text-align: center;"></div>
+			<div              style="width:12%;text-align: center;"></div>
+			<div id="cabbage2" style="width:1%;text-align: center;"></div>
+			<div               style="width:12%;text-align: center;"></div>
+			<div id="loris"    style="width:1%;text-align: center;"></div>
+			<div               style="width:24%;text-align: center;"></div>
+			<div id="pasta"    style="width:1%;text-align: center;"></div>
+			<div               style="width:24%;text-align: center;"></div>
+			<div id="developer"    style="width:1%;text-align: center;"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let opts = {showOnCreate: true, hideOnClick: false, placement: 'bottom', allowHTML: true};
+		tippy('#cabbage1', { content: '<div class="money">$1075</div><img src="assets/cabbage.jpg">', ...opts});
+		tippy('#andrew', { content: '<div class="money">$2150</div><img src="assets/andrew.png">', ...opts});
+		tippy('#cabbage2', { content: '<div class="money">$3225</div><img src="assets/cabbage2.png">', ...opts});
+		tippy('#loris', { content: '<div class="money">$4300</div><img src="assets/loris-round-avatar.png">', ...opts});
+		tippy('#pasta', { content: '<div class="money">$6450</div><img src="assets/trofie.png">', ...opts});
+		tippy('#developer', { content: '<div class="money">$8600</div><img src="assets/developer.png">', ...opts});
+
+		let bar = new ProgressBar.Line('#bar', {
+		  // strokeWidth: 4,
+		  easing: 'easeInOut',
+		  duration: 1400,
+		  color: '#F7A41D',
+		  // trailColor: '#eee',
+		  // trailWidth: 1,
+		  svgStyle: {width: '100%', height: '100%'},
+		  from: {color: '#F7A41D'},
+		  to: {color: '#F7A41D'},
+		  step: (state, bar) => {
+    		bar.path.setAttribute('stroke', state.color);
+    	  }});
+		// bar.animate(1);  // Value from 0.0 to 1.0
+
+
+
+		let getValue = function(url, callback) {
+			// fetch(url, { cache: 'no-cache' }).then(callback);
+		    var xhr = new XMLHttpRequest();
+		    xhr.open('GET', url, true);
+		    xhr.setRequestHeader('Cache-Control', 'no-cache');
+		    xhr.onload = function() {
+		      var status = xhr.status;
+		      if (status === 200) {
+		        callback(null, xhr.response);
+		      } else {
+		        callback(status, xhr.response);
+		      }
+		    };
+		    xhr.send();
+		};
+
+		var audio = new Audio('assets/kaching.mp3');
+		var oldPercentage = 0;
+		let update = function() {
+			getValue("http://home.andrewkelley.me:8000/funds.txt", (err, res) => {
+				console.log(err, res);
+				if (err != null) {
+					alert(err);
+					// clearInterval(interval);
+					return;
+				}
+
+				let newValue = parseFloat(res);
+				let newPercentage = Math.min(newValue/8600.0, 1.0);
+				bar.animate(newPercentage);
+				if (newPercentage > oldPercentage) {
+					oldPercentage = newPercentage;
+					audio.play();
+				}
+			});
+		}
+		interval = setInterval(update, 5000);
+		update();
+	</script>
+</body>
+</html>

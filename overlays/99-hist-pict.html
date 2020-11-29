@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+        	background-color: #131315;
+        	padding: 0;
+        	margin: 0;
+		}
+
+		body::-webkit-scrollbar {
+			display:none;
+		}
+		#content img {
+			width: 98vw;
+		}
+
+		#overlay {
+			width: 100vw;
+			height: 100vh;
+			position: fixed;
+			background: linear-gradient(to bottom, 
+				rgba(19,19,21,1) 0%, 
+				rgba(19,19,21,1) 10%, 
+				rgba(19,19,21,0) 45%,
+				rgba(19,19,21,0) 55%,
+				rgba(19,19,21,1) 90%,
+				rgba(19,19,21,1) 100%);
+		}
+	</style>
+	<script src="assets/anime.min.js"></script> 
+	<script type="text/javascript">
+	    async function Start(x) { //Start(342472)
+	        console.log("happening");
+	        let singleTicks = 33;
+	        for (var i = 0; i < singleTicks; i++) {
+	            await anime({
+	                targets: '#content',
+	                translateY: 48 * 2 * i,
+	                // easing: 'easeInOutCirc',
+	                duration: 620,
+	            }).finished;
+	        }
+
+	        await anime({
+	            targets: '#content',
+	            translateY: x,
+	            duration: (1000 * 42) + 650,
+	            easing: 'cubicBezier(0.475, 0.600, 0.055, 0.590)',
+	            endDelay: 5000,
+	        }).finished;
+
+
+	        await anime({
+	            targets: '#content',
+	            opacity: [1, 0],
+	            easing: 'linear',//'cubicBezier(0.475, 0.600, 0.055, 0.590)',
+	            endDelay: 5000,
+	        }).finished;
+	    }
+
+	    function Reset() {
+	    	anime({
+	    	    targets: '#content',
+	    	    translateY: 0,
+	    	});
+	    }
+	</script>
+</head>
+<body>
+	<div id="overlay"></div>
+	<div id="content">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-2.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-3.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-4.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-5.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-6.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-7.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-8.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-9.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-10.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-11.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-12.png">
+		<img src="/assets/gitlog/screencapture-localhost-8000-99-history-html-2020-07-02-21_00_34-13.png">
+	</div>
+</body>
+</html>
