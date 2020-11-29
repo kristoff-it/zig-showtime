@@ -9,7 +9,7 @@
       font-family: 'Press Start 2P';
       src: url('assets/PressStart2P-Regular.ttf') format('truetype');
     }  
-      html, body {margin: 0; padding: 0;}
+      html, body {margin: 0; padding: 0; overflow: hidden;}
       body {
          font-family: 'Press Start 2P', cursive;
          background-color: #131315;
@@ -138,6 +138,9 @@
    <script type="text/javascript">
     anime.speed = 1;
       anime.timeline({loop: true})
+      .add({
+        delay: 1500,
+      })
       .add({
         targets: '#runtime , #comptime',
         keyframes: [
